@@ -29,6 +29,9 @@ const config = {
   },
   devtool: "source-map",
   mode: "production",
+  devServer: {
+    port: 9000
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({

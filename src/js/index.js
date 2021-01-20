@@ -1,6 +1,9 @@
 
 
 $(function() {
+
+  //navbar
+
   (function(){
     if(document.querySelector('.header')) {
         const burger = document.getElementById('burger'),
@@ -52,4 +55,55 @@ $(function() {
     }
     
   })();
+
+  // sliders
+
+  $('.testimonials__slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    centerMode: true,
+    arrows: false,
+    dots: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
+  })
+
+  $('.portofolio__slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoPlay: true,
+    infinite: true,
+    centerMode: true,
+    arrows: true,
+    dots: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
+  })
 })

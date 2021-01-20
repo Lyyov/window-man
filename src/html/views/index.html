@@ -1,6 +1,102 @@
 <%=_.template(require('./../includes/head.html').default)(data) %>
 <%=_.template(require('./../includes/header.html').default)(data) %>
 
-<main class="home-content">sadfasf</main>
+<main class="home-content">
+  <div class="banner">
+    <div class="banner__inner">
+      <div class="container">
+        <h5>Welcom to the</h5>
+        <h1 class="banner__title">Window Man</h1>
+        <h4>your window and door contractor</h4>
+        <div class="btn btn-primary">
+          Online QUEUE
+        </div>
+      </div>
+    </div>
+    <img class="banner__img" src="./img/window-banner.jpg" alt="">
+  </div>
+  <section class="section about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 class="title about__title">About Me</h3>
+
+          <p class="lead mb-0">
+            <b>I am a contractor.</b>
+          </p>
+          <p class="lead">
+            <b>I have been installing windows and doors for 18 years!</b>
+          </p>
+          <p class="lead">
+            I am comfortable discussing all details over the phone, text or email. I can give you my advice on styles, colors, and the installation process. I usually do estimates based on the approximate size of your windows. If you are looking for a door it would help if you could send me a picture of your existing door and/or door design you have in mind or pick some from <a class="link" href="portofolio.html">My Front Entry Doors Portfolio</a>. Do not forget to check my <a class="link" href="https://homestars.com/companies/2888420-window-man">REVIEWS</a> !
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section offer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="offer__title title">
+            What I Offer
+          </h3>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="windows.html" class="offer__item">
+            <div class="offer__icon">
+              <i class="fas fa-border-all"></i>
+            </div>
+            <div class="offer__name">
+              Windows
+            </div>
+            <p class="offer__lead lead text-faded">
+              Replacement brick to brick or retrofit
+            </p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="windows.html" class="offer__item">
+            <div class="offer__icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="offer__name">
+              Doors
+            </div>
+            <p class="offer__lead lead text-faded">
+              Modern and traditional styles, any size
+            </p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="windows.html" class="offer__item">
+            <div class="offer__icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="offer__name">
+              Brick Concrete Cutting
+            </div>
+            <p class="offer__lead lead text-faded">
+              Cut brick concrete for a new window or door
+            </p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="windows.html" class="offer__item">
+            <div class="offer__icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="offer__name">
+              Advice/the Way it Works
+            </div>
+            <p class="offer__lead lead text-faded">
+              Get any Question answered <i class="fas fa-heart"></i>  I love to talk!
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 <%= _.template(require('./../includes/footer.html').default)(data) %> <%=
 _.template(require('./../includes/scripts.html').default)(data) %>

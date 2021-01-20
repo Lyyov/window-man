@@ -110,7 +110,7 @@
     height: calc(100vh - 70px);
     overflow: scroll;
     width: 80vw;
-    max-width: 400px;
+    max-width: 360px;
     background: $fonBody;
     z-index: 1;
     padding: 30px 15px;
@@ -146,6 +146,10 @@
     padding-bottom: 8px;
     font-size: $fontSize_header;
     cursor: pointer;
+
+    svg {
+      margin-top: 5px;
+    }
   }
   &__back {
     display: flex;
@@ -164,35 +168,10 @@
     padding: 0 30px;
   }
 
-  &__settings-mobile {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-
-    select {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-    }
-  }
-
-  &__settings-desk {
-    display: none;
-  }
-
-  &__settings-mobile img {
-    display: inline;
-    width: 25px;
-  }
-
-  .button {
+  .btn {
     text-align: center;
     margin: 30px 0;
+    width: 100%;
   }
 
   &__cont {
@@ -212,7 +191,6 @@
 
   &__cont-icon {
     margin-right: 20px;
-    color: $color_second;
   }
 
   &__cont-ret {
@@ -253,31 +231,13 @@
     display: none;
   }
   .header {
-    height: 150px;
 
-    &__profile-button span {
-      margin-left: 10px;
-    }
-
-    &__cabinet,
-    &__cabinet-bottom {
-      display: none;
-    }
-
-    &__name-desk,
-    &__cabinet-desk {
-      display: block;
-    }
 
     &__logo-desk {
+      font-weight: 600;
+      font-size: 25px;
+      color: $fonBlue;
       display: block;
-      position: static;
-      margin: 0;
-      width: 200px;
-
-      img {
-        width: 200px;
-      }
     }
 
     &__mobile {
@@ -293,7 +253,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 150px;
+      height: $height_header;
       overflow: visible;
       width: auto;
       max-width: 960px;
@@ -301,6 +261,7 @@
       transform: none !important;
       border: 0;
       margin: auto;
+      box-shadow: none;
     }
 
     &__submenu {
@@ -332,7 +293,7 @@
     }
 
     &__submenu &__submenu {
-      background-color: $color_second;
+      background-color: $fonBlue;
       left: 100%;
       top: -30px;
 
@@ -348,7 +309,8 @@
 
     &__submenu-firstLvl {
       & > .header__item:hover {
-        background-color: $color_second;
+        background-color: $fonBlue;
+        color: #fff;
 
         .header__button {
           color: #ffff;
@@ -370,10 +332,6 @@
       justify-content: space-between;
       align-items: center;
       height: 75px;
-    }
-
-    &__top {
-      padding-top: 10px;
     }
 
     &__top-right,
@@ -402,13 +360,13 @@
       }
 
       &:hover {
-        color: $color_second;
+        color: $fonBlue;
 
         & > .header__button {
-          color: $color_second;
+          color: $fonBlue;
 
           svg {
-            fill: $color_second;
+            fill: $fonBlue;
           }
         }
       }
@@ -464,19 +422,6 @@
       }
     }
 
-    &__settings-mobile {
-      display: none;
-    }
-    &__settings-desk {
-      display: block;
-      margin-right: 30px;
-
-      .header__submenu {
-        max-width: auto;
-        width: calc(100% + 60px);
-      }
-    }
-
     .button {
       margin: 0;
       font-size: $fontSize_main;
@@ -497,4 +442,10 @@
       font-size: $fontSize_name;
     }
   }
+}
+
+@media (min-width: 1400px) {
+ .header .header__menu {
+    max-width: 1320px;
+}
 }

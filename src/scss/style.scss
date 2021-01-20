@@ -2,3 +2,168 @@
 @import "resset.scss";
 @import "header.scss";
 @import "footer.scss";
+
+a:hover {
+  color: $fonBlue
+}
+
+// button primary styles
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.btn-primary {
+  background: $fonBlue;
+  border: 0;
+
+  &:hover {
+    background: $fonHover;
+  }
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+
+main {
+  padding-top: $height_header;
+}
+
+.link {
+  color: $fonBlue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  color: $fonBlue;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.banner {
+  max-height: calc(100vh - 75px);
+  overflow: hidden;
+  position: relative;
+  background-color: $fonYellow;
+  // background-image: url(../img/bg-callout.png);
+  background-repeat: repeat;
+
+  &__img {
+    opacity: .3;
+  }
+  &__inner {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 20px;
+    margin-top: 100px;
+  }
+
+  h5 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 37px;
+    font-weight: 600;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.about {
+
+  .lead {
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .row {
+    justify-content: center;
+  }
+}
+
+.offer {
+  background-color: $fonBlue;
+
+  &__title {
+    color: $fonYellow;
+    margin-bottom: 80px;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__icon {
+    background-color: $fonBody;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: auto;
+    color: $fonBlue;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &__name {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 0;
+  }
+
+  &__lead {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  &__item:hover {
+    p, .offer__name {
+      text-decoration: underline;
+    }
+  }
+}

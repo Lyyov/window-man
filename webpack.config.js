@@ -8,14 +8,14 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  return templateFiles.map(item => {
+  return templateFiles.map((item) => {
     const parts = item.split(".");
     const name = parts[0];
     const extension = parts[1];
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-      inject: false
+      inject: false,
     });
   });
 }
@@ -25,20 +25,20 @@ const htmlPlugins = generateHtmlPlugins("./src/html/views");
 const config = {
   entry: ["./src/js/index.js", "./src/scss/style.scss"],
   output: {
-    filename: "./js/bundle.js"
+    filename: "./js/bundle.js",
   },
   devtool: "source-map",
   mode: "production",
   devServer: {
-    port: 9000
+    port: 9000,
   },
   optimization: {
     minimizer: [
       new TerserPlugin({
         sourceMap: true,
-        extractComments: true
-      })
-    ]
+        extractComments: true,
+      }),
+    ],
   },
   module: {
     rules: [
@@ -48,14 +48,14 @@ const config = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {}
+            options: {},
           },
           {
             loader: "css-loader",
             options: {
               sourceMap: true,
-              url: false
-            }
+              url: false,
+            },
           },
           {
             loader: "postcss-loader",
@@ -68,52 +68,52 @@ const config = {
                     "default",
                     {
                       discardComments: {
-                        removeAll: true
-                      }
-                    }
-                  ]
-                })
-              ]
-            }
+                        removeAll: true,
+                      },
+                    },
+                  ],
+                }),
+              ],
+            },
           },
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
         include: path.resolve(__dirname, "src/html/includes"),
-        use: ["raw-loader"]
-      }
-    ]
+        use: ["raw-loader"],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./css/style.bundle.css"
+      filename: "./css/style.bundle.css",
     }),
     new CopyWebpackPlugin([
       {
         from: "./src/fonts",
-        to: "./fonts"
+        to: "./fonts",
       },
       {
         from: "./src/favicon",
-        to: "./favicon"
+        to: "./favicon",
       },
       {
         from: "./src/img",
-        to: "./img"
+        to: "./img",
       },
       {
         from: "./src/uploads",
-        to: "./uploads"
-      }
-    ])
-  ].concat(htmlPlugins)
+        to: "./uploads",
+      },
+    ]),
+  ].concat(htmlPlugins),
 };
 
 module.exports = (env, argv) => {

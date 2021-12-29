@@ -68,7 +68,7 @@ main {
   height: calc(90vh - 75px);
   overflow: hidden;
   position: relative;
-  
+
   // background-image: url(../img/bg-callout.png);
   background-repeat: repeat;
 
@@ -111,7 +111,6 @@ main {
 
   .container {
     height: 100%;
-    
   }
 }
 
@@ -436,7 +435,6 @@ main {
     height: auto;
     min-height: calc(90vh - 75px);
 
-
     &__inner {
       width: auto;
       max-width: 370px;
@@ -454,7 +452,6 @@ main {
 
     .btn {
       margin-top: 2rem;
-
     }
 
     &__title {
